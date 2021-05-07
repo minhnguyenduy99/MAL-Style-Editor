@@ -1,0 +1,26 @@
+
+.app-button {
+  padding: 12px;
+  font-size: 1rem;
+  background: $button-background-color;
+  cursor: pointer;
+  color: $button-text-color;
+  border: $button-border;
+  border-radius: 7px;
+
+  &.is-small {
+    padding: 7px 12px;
+  }
+}
+
+.app-button {
+  &.outlined {
+    background: transparent;
+    color: $button-background-color;
+
+    &:hover {
+      background: $button-background-color;
+      color: $button-text-color;
+    }
+  }
+}

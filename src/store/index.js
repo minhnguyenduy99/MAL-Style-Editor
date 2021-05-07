@@ -1,11 +1,19 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import ElementStyleModule from "./element-style.module";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+const MODULES = {
+  elementStyle: "ES",
+};
+
+export default () =>
+  new Vuex.Store({
+    state: {},
+    mutations: {},
+    actions: {},
+    modules: {
+      [MODULES.elementStyle]: ElementStyleModule,
+    },
+  });

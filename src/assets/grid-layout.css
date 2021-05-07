@@ -1,0 +1,199 @@
+/**
+Variable configuration
+**/
+
+:root {
+    --theme-color: #CC7C7C;
+    --background-color: var(--theme-color);
+    --text-color: var(--theme-color);
+    --link-color-value: 19, 209, 209;
+    --link-color: rgba(var(--link-color-value), 0.8);
+    --link-hover-color: rgba(var(--link-color-value), 1);
+    --label-color: white;
+    --border-radius: 7px;
+    --container-background-color: rgba(0, 0, 0, 0.8);
+}
+
+.list-container {
+    background-color: var(--container-background-color) !important;
+}
+
+.list-unit .list-status-title {
+    background-color: var(--background-color);
+}
+
+/* .list-unit .list-status-title .text {
+    background-color: var(--text-color);
+} */
+
+
+.list-table-data {
+    --score-text: "Score: ";
+    --type-text: "Type: ";
+    --progress-text: "Progress";
+}
+
+body {
+    background: var(--background-color);
+}
+
+body a {
+    color: var(--link-color) !important;
+    transition: color 0.15s;
+}
+
+body a:hover {
+    color: var(--link-hover-color) !important;
+}
+
+.list-table .list-table-data .data a {
+    color: var(--link-color) !important;
+    transition: color 0.15s;
+}
+
+.list-table .list-table-data .data a:hover {
+    color: var(--link-hover-color) !important;
+}
+
+
+/**
+End 
+**/
+
+.list-table {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.list-table tbody:first-child {
+    grid-column: 1 / span 6;
+    justify-self: center;
+}
+
+.list-table .list-table-header {
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.list-table .list-table-header .header-title {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    margin: 0;
+    background: none;
+    height: fit-content;
+}
+
+.list-table .list-table-header .header-title > * {
+    text-align: center;
+}
+
+.list-table .list-table-header .header-title.status,
+.list-table .list-table-header .header-title.number,
+.list-table .list-table-header .header-title.image,
+.list-table .list-table-header .header-title.tags {
+    display: none;
+}
+
+
+.list-item {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.list-table-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto;
+    column-gap: 10px;
+    row-gap: 5px;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 100%;
+}
+
+.list-table .list-table-data .data {
+    display: block;
+    border: none;
+}
+
+.list-table-data .data.number,
+.list-table-data .data.status,
+.list-table-data .data.tags {
+    display: none;
+}
+
+.list-table-data .data.image,
+.list-table-data .data.title,
+.list-table-data .data.score {
+    grid-column: 1 / span 2;
+}
+
+.list-table .list-table-data .data.title {
+    text-align: center;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ababab;
+    align-self: stretch;
+}
+
+.list-table-data .data.score,
+.list-table-data .data.type {
+    text-align: left;
+    font-weight: bold;
+}
+
+.list-table-data .data.progress {
+    text-align: right;
+    font-weight: bold;
+}
+
+.list-table-data .data::before {
+    font-weight: bold;
+    color: var(--label-color);
+    opacity: 0.4;
+}
+
+.list-table-data .data.score::before {
+    content: var(--score-text);
+}
+
+.list-table-data .data.type::before {
+    display: block;
+    content: var(--type-text);
+}
+
+.list-table-data .data.progress::before {
+    content: var(--progress-text);
+}
+
+.list-table-data .data.score,
+.list-table-data .data.score::before {
+    font-size: 16px;
+}
+
+
+.list-table .list-table-data .data.title .add-edit-more {
+    float: none;
+}
+
+.list-table .list-table-data .data.image .image {
+    width: 200px;
+    max-width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0.6;
+    transition: 0.15s ease-out;
+    transform-origin: 0.5 0.5;
+    border-radius: var(--border-radius);
+}
+
+.list-table .list-table-data .data.image .image:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

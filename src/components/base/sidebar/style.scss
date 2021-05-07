@@ -1,0 +1,17 @@
+
+
+.sidebar-slide-enter-active, .sidebar-slide-leave-active {
+  transition: 0.3s ease-in;
+}
+
+.sidebar-slide-leave-to {
+  transform: translateX(-100px);
+}
+
+.sidebar {
+  transition: 0.3s ease;
+  &.is-closed {
+    transition: 0.3s ease-in;
+    transform: translateX(-70%);
+  }
+}

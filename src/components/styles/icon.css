@@ -1,0 +1,11 @@
+i.is-small {
+  font-size: 0.8rem;
+}
+
+i.is-medium {
+  font-size: 1rem;
+}
+
+i.is-large {
+  font-size: 1.25rem;
+}

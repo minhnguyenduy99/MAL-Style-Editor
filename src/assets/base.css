@@ -1,0 +1,35 @@
+:root {
+    --theme-color: hsl(0, 69%, 58%);
+    --background-color: black;
+    --text-color: var(--theme-color);
+    --link-color: var(--text-color);
+    --link-hover-color: hsl(var(--link-color), 30%);
+    --container-background-color: rgba(0, 0, 0, 0.8);
+}
+
+#list-container {
+    background-color: var(--container-background-color);
+}
+
+.list-table-data {
+    --score-text: "Score";
+    --type-text: "Type";
+    --progress-text: "Progress";
+}
+
+body {
+    background: var(--background-color);
+}
+
+body * {
+    color: var(--text-color);
+}
+
+.list-table .list-table-data .data a {
+    color: var(--link-color);
+    transition: color 0.15s;
+}
+
+.list-table .list-table-data .data a:hover {
+    color: var(--link-hover-color);
+}
